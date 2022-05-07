@@ -14,7 +14,6 @@ set(imguizmo_sources
     ${external_root}/ImZoomSlider.h
 )
 
-add_library(ImGuizmo ${imguizmo_sources})
-target_include_directories(ImGuizmo PUBLIC AFTER ${external_root}/ImGuizmo/)
+add_library(ImGuizmo STATIC ${imguizmo_sources})
+target_include_directories(ImGuizmo PUBLIC ${external_root})
 set_target_properties(ImGuizmo PROPERTIES FOLDER "Dependencies/GUI")
-target_link_libraries(ImGuizmo PUBLIC imgui)
