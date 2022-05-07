@@ -1,19 +1,20 @@
+set(external_root ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(imguizmo_sources
-    ${external}/ImGuizmo/GraphEditor.h   
-    ${external}/ImGuizmo/GraphEditor.cpp 
-    ${external}/ImGuizmo/ImGradient.h 
-    ${external}/ImGuizmo/ImGradient.cpp   
-    ${external}/ImGuizmo/ImSequencer.h   
-    ${external}/ImGuizmo/ImSequencer.cpp 
-    ${external}/ImGuizmo/ImCurveEdit.h   
-    ${external}/ImGuizmo/ImCurveEdit.cpp  
-    ${external}/ImGuizmo/ImGuizmo.h
-    ${external}/ImGuizmo/ImGuizmo.cpp 
-    ${external}/ImGuizmo/ImZoomSlider.h
+    ${external_root}/GraphEditor.h   
+    ${external_root}/GraphEditor.cpp 
+    ${external_root}/ImGradient.h 
+    ${external_root}/ImGradient.cpp   
+    ${external_root}/ImSequencer.h   
+    ${external_root}/ImSequencer.cpp 
+    ${external_root}/ImCurveEdit.h   
+    ${external_root}/ImCurveEdit.cpp  
+    ${external_root}/ImGuizmo.h
+    ${external_root}/ImGuizmo.cpp 
+    ${external_root}/ImZoomSlider.h
 )
 
 add_library(ImGuizmo ${imguizmo_sources})
-target_include_directories(ImGuizmo PUBLIC AFTER ${external}/ImGuizmo/)
+target_include_directories(ImGuizmo PUBLIC AFTER ${external_root}/ImGuizmo/)
 set_target_properties(ImGuizmo PROPERTIES FOLDER "Dependencies/GUI")
 target_link_libraries(ImGuizmo PUBLIC imgui)
